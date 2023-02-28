@@ -1,0 +1,10 @@
+version: '3.6'
+services:
+  web:
+    build: 
+      context: ./web
+    container_name: 'PVDC-web'
+    ports: 
+      - 3000
+    volumes:
+      - ./web:/app
