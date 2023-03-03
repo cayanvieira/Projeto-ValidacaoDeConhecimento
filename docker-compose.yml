@@ -1,9 +1,19 @@
 version: '3.6'
 services:
+  api:
+      build: 
+        context: ./api
+      container_name: 'PVDC-api'
+      ports: 
+        - 3000:3000
+      volumes:
+        - ./api:/app
   web:
     build: 
       context: ./web
     container_name: 'PVDC-web'
+    depends_on:
+      - api
     ports: 
       - 3000
     volumes:
